@@ -1,0 +1,29 @@
+https://codinginflow.com/tutorials/android/circular-reveal-animation
+
+
+
+
+   private void revealFAB() {
+        View view = findViewById(R.id.fab);
+        int cx = view.getWidth() / 2;
+        int cy = view.getHeight() / 2;
+        float finalRadius = (float) Math.hypot(cx, cy);
+        Animator anim = ViewAnimationUtils.createCircularReveal(view, cx, cy, 0, finalRadius);
+        view.setVisibility(View.VISIBLE);
+        anim.start();
+    }
+    private void hideFAB() {
+        final View view = findViewById(R.id.fab);
+        int cx = view.getWidth() / 2;
+        int cy = view.getHeight() / 2;
+        float initialRadius = (float) Math.hypot(cx, cy);
+        Animator anim = ViewAnimationUtils.createCircularReveal(view, cx, cy, initialRadius, 0);
+        anim.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                view.setVisibility(View.INVISIBLE);
+            }
+        });
+        anim.start();
+    }

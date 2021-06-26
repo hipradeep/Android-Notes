@@ -1,0 +1,5 @@
+  
+  //set DrawableEnd
+ 
+  Drawable img = getResources().getDrawable(R.drawable.ic_check_done);
+  tv_btn_upload_adar_text.setCompoundDrawablesWithIntrinsicBounds(null, null, img, null);

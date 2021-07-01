@@ -1,0 +1,29 @@
+   holder.itemView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.fade_animation));
+   
+   
+   //fade_animation.xml
+   
+   <?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <alpha
+        android:fromAlpha="0.0"
+        android:toAlpha="1.0"
+        android:duration="@integer/anim_dura"
+        />
+    <translate
+        android:fromXDelta="-100%"
+        android:toXDelta="0%"
+        android:fromYDelta="-100%"
+        android:toYDelta="0"
+        android:duration="@integer/anim_dura"
+        />
+
+    <scale
+        android:fromXScale="0"
+        android:fromYScale="0"
+        android:toXScale="100%"
+        android:toYScale="100%"
+        android:duration="@integer/anim_dura"
+        android:interpolator="@android:anim/decelerate_interpolator"
+        />
+</set>

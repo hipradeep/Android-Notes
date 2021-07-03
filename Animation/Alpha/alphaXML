@@ -10,4 +10,14 @@
 
 <!-- defination
 
+              <alpha> : this is a tag to animate the rate of change of visibility of an element.
+
+    android:fromAlpha : this defines the initial visibility of the element. 0 means the element is invisible.
+
+      android:toAlpha : this attribute defines the time alpha will take to make the element completely visible, more the value lesser the time it will take.
+
+ android:interpolator : it controls the rate of change of animation, accelerate_interpolator is a default interpolator defined in android core libs.
+
+     android:duration : this attribute defines the total duration of the animation.
+
 -->

@@ -17,7 +17,7 @@
         android:repeatCount="1"
         />
   
-  
+  </set>
      <!-- defination
 
       android:fromXScale : 0.0, 1.1, 1, 2, 3... or 0%, 10%, 100%, 200%....
@@ -53,4 +53,4 @@
    https://singhajit.com/android-custom-animations/
 
     -->
-</set>
+

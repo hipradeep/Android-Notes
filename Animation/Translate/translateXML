@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+     android:fillAfter="true"
+     android:interpolator="@android:anim/bounce_interpolator">
+
+    <translate
+        android:duration="1000"
+        android:fromXDelta="0"
+        android:fromYDelta="500"
+        android:toXDelta="0"
+        android:toYDelta="0"/>
+</set>
+
+<!-- defination
+
+              android:fromXDelta : this attributes defines the initial position of the element respective to X axis. 
+                                  In the above example we are animating the element from bottom to top, so you will see only Y axis values are non-zero.
+                                  
+              android:fromYDelta : this defines the initial position of the element respective to Y axis.
+              
+                android:toXDelta : if we were animating from left to right or vice versa, we would add some value here and the element would have moved from fromXDelta to toXDelta.
+                                  
+                android:toYDelta : this defines the last position of the element where it will rest after animation.
+                                  
+            android:interpolator : in this case we are using bounce_interpolator which will give the bouncing effect to the animation.
+
+
+-->

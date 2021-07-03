@@ -20,8 +20,10 @@
   
      <!-- defination
 
-      android:fromXScale : this is the initial size of the UI element respective to X axis. 1 means that the initial size will be the actual size of element. 
+      android:fromXScale : 0.0, 1.1, 1, 2, 3... or 0%, 10%, 100%, 200%....
+                           this is the initial size of the UI element respective to X axis. 1 means that the initial size will be the actual size of element. 
                            Reducing it will make the element smaller.
+
       android:fromYScale : its same as android:fromXScale except the size will change respective to Y axis.
 
        android:toXScale : this attribute defines the size of element till it will animate respective to X axis.

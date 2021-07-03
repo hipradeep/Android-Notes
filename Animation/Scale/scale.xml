@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+  
+    <scale
+        android:fromXScale="0%"  
+        android:fromYScale="0%"
+        android:toXScale="800%"
+        android:toYScale="800%"
+
+        android:pivotX="50%"
+        android:pivotY="50%"
+
+        android:duration="2000"
+        android:interpolator="@android:anim/decelerate_interpolator"
+           
+        android:repeatMode="reverse"
+        android:repeatCount="1"
+        />
+  
+  
+     <!-- defination
+
+      android:fromXScale : this is the initial size of the UI element respective to X axis. 1 means that the initial size will be the actual size of element. 
+                           Reducing it will make the element smaller.
+      android:fromYScale : its same as android:fromXScale except the size will change respective to Y axis.
+
+       android:toXScale : this attribute defines the size of element till it will animate respective to X axis.
+
+       android:toYScale : same as android:toXScale except element will animate respective to Y axis.
+       
+         android:pivotX : this is the position from where the size will increase or decrease. 50% means mid value of X axis.
+
+         android:pivotY : here 50% means mid value of Y axis.
+       
+     android:repeatMode : "restart", "reverse"
+                          This attribute defines the mode in which the android should repeat the same animation.
+                          This is how the element comes back in its normal size after it completes.
+
+    android:repeatCount : This defines the number of times animation should repeat. Setting it to -1 will repeat the animation infinitely.
+
+   android:interpolator : "@android:anim/decelerate_interpolator", "@android:anim//accelerate_interpolator"
+                          It controls the rate of change of animation, accelerate_interpolator is a default interpolator defined in android core libs.
+        
+       android:duration : this attribute defines the total duration of the animation.
+       
+        />
+
+
+   for more:
+   https://www.androidhive.info/2013/06/android-working-with-xml-animations/
+   https://singhajit.com/android-custom-animations/
+
+    -->
+</set>

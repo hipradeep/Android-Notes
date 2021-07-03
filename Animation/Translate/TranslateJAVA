@@ -1,0 +1,1 @@
+findById(R.id.element).startAnimation(AnimationUtils.loadAnimation(this, R.anim.translateXML));

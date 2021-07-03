@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+     android:fillAfter="true">
+
+    <rotate
+        android:duration="500"
+        android:fromDegrees="0"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:repeatCount="1"
+        android:repeatMode="reverse"
+        android:toDegrees="360"/>
+</set>
+
+ <!-- defination
+                   
+                   android:fromDegrees : this attribute decides the initial position of rotation of the element. Here 0 means it will start the rotation from the actual position of the element.
+                   
+                    android:toDegnrees : define till what angle you want to rotate the element.
+                   
+                        android:pivotX : this defines the center of rotation of element respective to X axis.
+
+                        android:pivotY : this defines the center of rotation of element respective to Y axis
+
+
+
+ -->

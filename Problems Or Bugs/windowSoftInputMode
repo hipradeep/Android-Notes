@@ -1,0 +1,12 @@
+ 
+ #windowSoftInputMode has no effect in Android M
+
+//Add this in your Activity Theme
+
+ <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+ <item name="android:windowTranslucentStatus">true</item>
+ 
+ //add this in menifest activity declearation
+ <activity
+  android:name=".activities.Register"
+  android:windowSoftInputMode="adjustNothing"/>

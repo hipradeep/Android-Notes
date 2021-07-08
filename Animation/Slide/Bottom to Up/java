@@ -1,0 +1,1 @@
+fragmentTransaction.setCustomAnimations(R.anim.slide_in_up, R.anim.slide_out_up);

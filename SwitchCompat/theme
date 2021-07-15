@@ -1,0 +1,17 @@
+ 
+ //App theme
+ 
+ <style name="AppThemeWithFullScreenWithoutStatusBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        
+        
+        
+        <item name="colorSwitchThumbNormal">@color/colorAccent</item>  // switch thumbs in their normal state.
+        
+        <item name="colorControlActivated">@color/orange</item> // when Switch will be On
+
+
+
+    </style>

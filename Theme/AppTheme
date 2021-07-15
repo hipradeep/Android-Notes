@@ -16,3 +16,19 @@ colorControlHighlight: The color applied to framework control highlights (ex. ri
 colorButtonNormal: The color applied to framework buttons in their normal state.
 
 colorSwitchThumbNormal: The color applied to framework switch thumbs in their normal state. (switch off)
+
+
+
+
+
+<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="colorPrimary">@color/first</item>
+    <item name="colorPrimaryDark">@color/second</item>
+    <item name="colorAccent">@color/third</item>
+   ...
+    <item name="colorControlActivated">@color/first</item>
+    <item name="colorControlHighlight">@color/first</item>
+    <item name="colorControlNormal">@color/second</item>
+    <item name="colorSwitchThumbNormal">@color/second</item>
+    <item name="colorButtonNormal">@color/second</item>
+...>

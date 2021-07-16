@@ -1,0 +1,4 @@
+// call from avtivity and pass the value for bottom fragments view , it requare a constructore to receive value 
+ 
+ BottomSheetDialog bottomSheet = new BottomSheetDialog(amount);
+            bottomSheet.show(getSupportFragmentManager(),

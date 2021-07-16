@@ -1,0 +1,5 @@
+///on click in list button
+
+BottomSheetDialog bottomSheet = new BottomSheetDialog();
+                bottomSheet.show(((FragmentActivity)context).getSupportFragmentManager(),
+                        "ModalBottomSheet");

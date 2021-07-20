@@ -1,0 +1,15 @@
+                       Bundle deliveryIdBundle = new Bundle();
+                        deliveryIdBundle.putString("deliveryId", response.body().getDeliveryId());
+                        goToActivity(context, DocumentsUpload.class, deliveryIdBundle);
+                        
+                        
+                        --------------------------------------------------
+                        
+                         Bundle receiveBundle;
+                         
+                         if (getIntent().getBundleExtra(PAYLOAD_BUNDLE) != null) {
+                          receiveBundle = getIntent().getBundleExtra(PAYLOAD_BUNDLE);
+                           }
+                           
+                           ........
+                           receiveBundle.getString("MOBILE")

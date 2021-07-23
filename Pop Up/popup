@@ -1,0 +1,40 @@
+  private void setMenuOption(View view) {
+        PopupMenu menu = new PopupMenu(this, view);
+
+//        if (isEditProfile){
+//            menu.getMenu().add(Menu.NONE, 10, 1, "Cancel Edit");
+//        }else{
+//
+//        }
+
+        menu.getMenu().add(Menu.NONE, 10, 1, "Edit Profile");
+
+        menu.getMenu().add(Menu.NONE, 11, 2, "Change Password");
+
+        menu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            public boolean onMenuItemClick(MenuItem item) {
+
+                switch (item.getItemId()) {
+                    //Edit profile
+                    case 10:
+
+                       /* if (isEditProfile){
+                            isEditProfile=false;
+                            initFun();
+                        }else {
+                            isEditProfile=true;
+
+                        }*/
+
+                        break;
+                    //change password
+                    case 11:
+
+                        break;
+                }
+
+                return true;
+            }
+        });
+        menu.show();
+    }

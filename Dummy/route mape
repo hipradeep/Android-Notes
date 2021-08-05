@@ -14,3 +14,13 @@
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+
+
+ ///////////////////////////
+ 
+   public void loadNavigationView(String lat,String lng){
+        Uri navigation = Uri.parse("google.navigation:q="+lat+","+lng+"");
+        Intent navigationIntent = new Intent(Intent.ACTION_VIEW, navigation);
+        navigationIntent.setPackage("com.google.android.apps.maps");
+        context.startActivity(navigationIntent);
+    }

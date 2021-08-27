@@ -1,0 +1,86 @@
+   
+
+   if (NetworkUtils.getConnectivityStatus(context) != 0){
+    //
+   }else showMessage(getString(R.string.alert_internet));
+
+  
+-----------BEFORE REQUEST CREATE
+
+    hideKeyboard();
+    showLoading();
+
+    LoggerUtil.logItem( );
+
+--------------onResponse
+
+    hideKeyboard();
+    hideLoading();
+    try {
+         LoggerUtil.logItem(response.body());
+         //showMessage(response.body().getMsg());
+     //
+
+
+      }catch (Exception ignore){ }
+
+-------------onFailure
+
+    hideKeyboard();
+    hideLoading();
+    showMessage(t.getMessage());
+
+
+-------------Glide for Image
+
+    Glide.with(context).load(dataItem.getDutyoffimage()).placeholder(R.drawable.icon_meter_pic).dontAnimate()
+         .diskCacheStrategy(DiskCacheStrategy.ALL)
+         .error(R.drawable.ic_food_tray)
+         .apply(new RequestOptions().transform( new RoundedCorners(12)))
+         .into(iv_end_meter_image);
+
+-------------TextColor
+
+    tv_action_type.setTextColor(context.getResources().getColor(R.color.fRed));
+    text.setTextColor(Color.parseColor("#FFFFFF"));
+    text.setTextColor(Color.RED);
+
+------------Image Background
+
+	qImageView.setBackgroundResource(R.drawable.thumbs_down);
+
+---------------Math
+
+    "₹ " + Math.round(Double.parseDouble(dataItem.getAmount()))
+
+---------------Bundel
+	Bundle deliveryIdBundle = new Bundle();
+	deliveryIdBundle.putString("deliveryId", response.body().getDeliveryId());
+	goToActivity(context, DocumentsUpload.class, deliveryIdBundle);
+
+--- 
+	Bundle receiveBundle;	
+
+	if (getIntent().getBundleExtra(PAYLOAD_BUNDLE) != null) {
+            receiveBundle = getIntent().getBundleExtra(PAYLOAD_BUNDLE);
+        }
+
+	receiveBundle.getString("deliveryId")
+---
+	 intent.putExtra(PAYLOAD_BUNDLE, bundle);
+
+-------Validation
+		
+	 if (TextUtils.isEmpty(txUserMail)) {
+            et_user_email.setError("Enter user name!");
+            return false;
+        } else if (!Utils.isEmailValid(txUserMail)) {
+            showMessage("Please Enter valid email");
+            return false;
+        }
+
+        if (TextUtils.isEmpty(txCityId)) {
+            showMessage("Select city");
+            return false;
+        }
+    

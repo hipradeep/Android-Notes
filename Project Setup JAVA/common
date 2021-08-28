@@ -1,0 +1,5 @@
+        
+ ---------LayoutInflater
+   
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_active_order, parent, false);
+        return new MyViewHolder(view);

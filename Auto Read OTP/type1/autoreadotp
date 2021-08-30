@@ -1,0 +1,45 @@
+
+//to register
+   registerBroadcastReceiver();
+   //to   unregister
+     unregisterReceiver(smsBroadcastReceiver);
+
+
+
+
+
+/// method for registerBroadcastReceiver
+    private void registerBroadcastReceiver() {
+        smsBroadcastReceiver = new SmsBroadcastReceiver();
+        smsBroadcastReceiver.smsBroadcastReceiverListener = new SmsBroadcastReceiver.SmsBroadcastReceiverListener() {
+            @Override
+            public void onSuccess(Intent intent) {
+                startActivityForResult(intent, REQ_USER_CONSENT);
+            }
+            @Override
+            public void onFailure() {
+            }
+        };
+        IntentFilter intentFilter = new IntentFilter(SmsRetriever.SMS_RETRIEVED_ACTION);
+        registerReceiver(smsBroadcastReceiver, intentFilter);
+    }
+
+  //If you register in onCreate(), you have to unregister in onDestroy().
+    // If you want to unregister in onStop() you have to register in onStart()
+
+     @Override
+    protected void onStart() {
+        super.onStart();
+      //   registerBroadcastReceiver();
+        
+        // if
+    }
+
+    @Override
+    protected void onStop() {
+
+        /*if ( smsBroadcastReceiver!= null){
+            unregisterReceiver(smsBroadcastReceiver);
+        }*/
+        super.onStop();
+    }

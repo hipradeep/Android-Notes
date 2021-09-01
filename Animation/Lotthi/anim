@@ -1,0 +1,38 @@
+
+ implementation 'com.airbnb.android:lottie:3.4.0'
+------------------------------------------
+
+<com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lothid"
+        android:layout_width="200dp"
+        android:layout_height="120dp"
+
+        android:layout_marginStart="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:lottie_autoPlay="false"
+        app:lottie_rawRes="@raw/cycle" />
+        
+        ---------------------
+        
+        Animation animation =AnimationUtils.loadAnimation(this, R.anim.slide_from_left);
+        animation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                lottieAnimationView.playAnimation();
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                lottieAnimationView.pauseAnimation();
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        
+        
+           // lottieAnimationView.animate().tra(100).setDuration(500).setStartDelay(0);
+       // lottieAnimationView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.slide_from_left));

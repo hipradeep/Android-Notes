@@ -1,0 +1,62 @@
+     private static final int LAUNCH_SECOND_ACTIVITY =11 ;
+ 
+ //FirstActivity
+
+
+    public void gotoNext(View view) {
+        Intent intent=new Intent(this,SecondActivity.class);
+        startActivityForResult(intent, LAUNCH_SECOND_ACTIVITY);   //use startActivityForResult()
+
+    }
+    
+
+    
+    
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.e("TAG", "Result : ");
+        if (requestCode == LAUNCH_SECOND_ACTIVITY) {
+            if(resultCode == Activity.RESULT_OK){
+                    String result=data.getStringExtra("result");
+                Log.e("TAG", "Result : "+result);
+                Toast.makeText(FirstActivity.this,result, Toast.LENGTH_SHORT).show();
+            }
+            if (resultCode == Activity.RESULT_CANCELED) {
+                // Write your code if there's no result
+            }
+        }
+    }
+    
+    
+    
+    
+   //on SecondActivity
+   
+   
+    @Override
+    public void onBackPressed() {
+
+        String result="pradeep";
+        Intent returnIntent = new Intent();
+        returnIntent.putExtra("result",result);
+        setResult(Activity.RESULT_OK,returnIntent);
+        //  setResult(Activity.RESULT_CANCELED, returnIntent);
+        Toast.makeText(ThirdActivity.this, result+"  third ", Toast.LENGTH_SHORT).show();
+        finish();
+        super.onBackPressed();  //imp
+
+    }
+    
+    //or in a method
+    
+        public void  onFinish(View view) {
+        String result="pradeep";
+        Intent returnIntent = new Intent();
+        returnIntent.putExtra("result",result);
+        setResult(Activity.RESULT_OK,returnIntent);
+        //  setResult(Activity.RESULT_CANCELED, returnIntent);
+        Toast.makeText(ThirdActivity.this, result+"  third ", Toast.LENGTH_SHORT).show();
+        finish();
+
+    }

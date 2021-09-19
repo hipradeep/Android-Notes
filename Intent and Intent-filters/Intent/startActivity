@@ -4,14 +4,21 @@
 
 
     public void gotoNext(View view) {
+        //old Method
         Intent intent=new Intent(this,SecondActivity.class);
         startActivityForResult(intent, LAUNCH_SECOND_ACTIVITY);   //use startActivityForResult()
+
+        //or
+
+        //new Method
+         Intent intent = new Intent(this,ThirdActivity.class);
+         someActivityResultLauncher.launch(intent);
 
     }
     
 
     
-    
+    //Old method
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -28,9 +35,26 @@
         }
     }
     
+    //new Method
+   ActivityResultLauncher<Intent> someActivityResultLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult result) {
+                        if (result.getResultCode() == Activity.RESULT_OK) {
+                            // Here, no request code
+                            Intent data = result.getData();
+                            assert data != null;
+                            String result1 =data.getStringExtra("result");
+                            Log.e("TAG", "Result : "+result);
+                            Toast.makeText(SecondActivity.this,result1, Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
     
     
-    
+   //------------------------------------------------------------------------------------------------------------------------ 
    //on SecondActivity
    
    

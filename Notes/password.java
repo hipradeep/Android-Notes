@@ -1,3 +1,5 @@
+ boolean isPasswordVisible = false;
+
 
         btn_showPassword.setOnClickListener(new View.OnClickListener() {
             @Override

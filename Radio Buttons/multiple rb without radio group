@@ -1,0 +1,53 @@
+ mainBinding.rbSelectEverything.setChecked(true);
+        mainBinding.rbSelectEverything.setSelected(true);
+        mainBinding.rbSelectEverything.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!mainBinding.rbSelectEverything.isSelected()) {
+                    mainBinding.rbSelectEverything.setChecked(true);
+                    mainBinding.rbSelectEverything.setSelected(true);
+
+                    mainBinding.rbSearchAndOrder.setChecked(false);
+                    mainBinding.rbSearchAndOrder.setSelected(false);
+                    mainBinding.rbCallMe.setChecked(false);
+                    mainBinding.rbCallMe.setSelected(false);
+                } else {
+                    //mainBinding.rbSelectEverything.setChecked(false);
+                    //mainBinding.rbSelectEverything.setSelected(false);
+                }
+            }
+        });
+        mainBinding.rbSearchAndOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!mainBinding.rbSearchAndOrder.isSelected()) {
+                    mainBinding.rbSearchAndOrder.setChecked(true);
+                    mainBinding.rbSearchAndOrder.setSelected(true);
+
+                    mainBinding.rbSelectEverything.setChecked(false);
+                    mainBinding.rbSelectEverything.setSelected(false);
+                    mainBinding.rbCallMe.setChecked(false);
+                    mainBinding.rbCallMe.setSelected(false);
+                } else {
+                   // mainBinding.rbSearchAndOrder.setChecked(false);
+                   // mainBinding.rbSearchAndOrder.setSelected(false);
+                }
+            }
+        });
+        mainBinding.rbCallMe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!mainBinding.rbCallMe.isSelected()) {
+                    mainBinding.rbCallMe.setChecked(true);
+                    mainBinding.rbCallMe.setSelected(true);
+
+                    mainBinding.rbSearchAndOrder.setChecked(false);
+                    mainBinding.rbSearchAndOrder.setSelected(false);
+                    mainBinding.rbSelectEverything.setChecked(false);
+                    mainBinding.rbSelectEverything.setSelected(false);
+                } else {
+                   // mainBinding.rbCallMe.setChecked(false);
+                    //mainBinding.rbCallMe.setSelected(false);
+                }
+            }
+        });

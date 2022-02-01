@@ -1,0 +1,39 @@
+public interface FragmentListener {
+    void onMenuSelect(Fragment fragment, String fragmentTitle, int id);
+}
+
+-------------------
+
+//in fragment
+
+ private FragmentListener fragmentListener;
+ 
+     // call
+     fragmentListener.onMenuSelect(new LabTestFragment(), "Lab tests", R.id.nav_lab_test);
+  
+  
+ 
+     @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        try {
+          //  fragmentListener = context instanceof Activity ? (FragmentListener) context : null;
+            fragmentListener =  (FragmentListener) context;
+        } catch (Exception e) {
+            Log.e("TAG", "MainActivity must implement fragmentListener");
+        }
+    }
+    
+ 
+ 
+ ---------------------
+ //in activity
+ 
+ ... implements FragmentListener{
+ 
+   @Override
+    public void onMenuSelect(Fragment fragment, String fragmentTitle, int id) {
+        replaceFragment(fragment, fragmentTitle);
+        mainBinding.bottomNavigationView.getMenu().findItem(id).setChecked(true);
+    }
+ }

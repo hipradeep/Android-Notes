@@ -1,0 +1,22 @@
+
+//globle
+  private int lastSelectedPosition = -1;
+  
+  
+      @Override
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        holder.rb_select_shop_type.setText(list.get(position).getName());
+
+        holder.rb_select_shop_type.setChecked(lastSelectedPosition == position);
+
+
+        holder.rb_select_shop_type.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lastSelectedPosition = holder.getAdapterPosition();
+                notifyDataSetChanged();
+            }
+        });
+
+
+    }

@@ -1,0 +1,53 @@
+ <color name="mtrl_textinput_default_box_stroke_color">#00ff00</color> // not active stork color, just add in color.xml
+ 
+ <com.google.android.material.textfield.TextInputLayout
+                    style="@style/OutlinedRoundBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/user_id"
+                    app:hintTextAppearance="@style/TextAppearance.MaterialComponents.Caption">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tiet_user_id"
+                        style="@style/TextInputEditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapSentences" />
+                </com.google.android.material.textfield.TextInputLayout>
+                
+                
+                
+                 <style name="OutlinedRoundBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundMode">outline</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/common_corner</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/common_corner</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/common_corner</item>
+        <item name="boxCornerRadiusTopStart">@dimen/common_corner</item>
+        <item name="boxStrokeColor">@color/colorPrimary</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="android:layout_margin">1dp</item>
+        <item name="android:colorBackgroundCacheHint">@color/white</item>
+        <item name="boxBackgroundColor">@color/main_background</item>
+        <item name="background">@color/main_background</item>
+        <item name="hintTextColor">@color/colorPrimary</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="materialThemeOverlay">@style/MyThemeOverlayOutlinedDense</item>
+    </style>
+
+    <style name="MyThemeOverlayOutlinedDense">
+        <item name="editTextStyle">@style/MyTextInputEditText_outlinedBox_dense_h
+        </item>
+    </style>
+
+    <style name="MyTextInputEditText_outlinedBox_dense_h" parent="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox.Dense">
+
+        <item name="android:layout_margin">8dp</item>
+    </style>
+    
+    
+    <style name="TextInputEditTextStyle">
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/light_grey</item>
+        <item name="android:paddingStart">@dimen/tief_padding</item>
+    </style>

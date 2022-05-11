@@ -1,0 +1,62 @@
+#1 if you want, expanded iten not to collaps, when list scroll up/down(expended item got collaps because its recycler view properties that if item is not in visible on mobile 
+screen then it will remove from RAM)
+
+>>> make a boolean variable 'isExpandable' in List Model and set it false by default and also gette/setter for it
+
+    private boolean isExpended=false;
+
+	public boolean isExpended() {
+		return isExpended;
+	}
+
+	public void setExpended(boolean expended) {
+		isExpended = expended;
+	}
+  
+  
+  
+>>> check it for isExpandale is true or false and show/hide item
+
+        if (list.get(position).isExpended())
+            holder.binding.rvSubLevelInfo.setVisibility(View.VISIBLE);
+        else holder.binding.rvSubLevelInfo.setVisibility(View.GONE);
+        
+
+>>> on click, change its value accordingly
+  
+      public void onClick(View view) {
+
+            if (holder.binding.rvSubLevelInfo.getVisibility() == View.VISIBLE) {
+                    
+                    holder.binding.rvSubLevelInfo.setVisibility(View.GONE);
+                    list.get(position).setExpended(false);
+                } else {
+                   
+                    holder.binding.rvSubLevelInfo.setVisibility(View.VISIBLE);
+                    list.get(position).setExpended(true);
+                }
+                
+               }
+               
+  ----------------------------------------------------------------------------------------
+  
+  #2 if you want to expand one item and collaps other 
+  
+   private int mExpandedPosition = -1;
+@Override
+    public void onBindViewHolder(MyAdapter.MyViewHolder holder, final int position) {
+        String str = mData.get(position);
+        holder.mText.setText(str);
+        
+        final boolean isExpanded = position == mExpandedPosition;
+        holder.expandableLayout.setVisibility( isExpanded ? View.VISIBLE : View.GONE);
+        holder.itemView.setActivated(isExpanded);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mExpandedPosition = isExpanded ? -1 : position;
+                    notifyDataSetChanged();
+                }
+            });
+    }
+  
